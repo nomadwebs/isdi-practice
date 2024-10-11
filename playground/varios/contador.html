@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador numeros</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+    html {
+        font-family: "Nunito", sans-serif;
+        ;
+    }
+
+    .mostrarSuma {
+        font-family: inherit;
+    }
+</style>
+
+<body>
+    <h1>Contador</h1>
+    <h2>Pulsa en los botones para acumular</h2>
+    <p id="mostrarSuma" class="mostrarSuma">0</p>
+
+    <button type="button">-</button>
+    <button type="button">+</button>
+
+    <script>
+        var num = 0;
+
+        var buttons = document.querySelectorAll('button');
+        var buttonRes = buttons[0];
+        var buttonSum = buttons[1];
+
+        buttonSum.addEventListener('click', function () {
+            num += 1;
+            updateNum(num);
+        });
+
+        buttonRes.addEventListener('click', function () {
+            num -= 1;
+            updateNum(num);
+        })
+
+        //document.getElementById('welcomeMessage').innerText = `Welcome, ${loggedUser.name}!`;
+
+        function updateNum(num) {
+            document.getElementById('mostrarSuma').innerText = num;
+        }
+
+    </script>
+</body>
+
+</html>
